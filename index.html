@@ -16,7 +16,7 @@
     (function () {
       try {
         var t = localStorage.getItem('athul-split-theme');
-        if (t === 'cyan' || t === 'gold' || t === 'mono') document.documentElement.setAttribute('data-theme', t);
+        if (t === 'cyan' || t === 'gold' || t === 'mono' || t === 'red') document.documentElement.setAttribute('data-theme', t);
       } catch (e) {}
     })();
   </script>
@@ -35,6 +35,7 @@
     html[data-theme="cyan"] { --accent: #22d3ee; }
     html[data-theme="gold"] { --accent: #f5c518; }
     html[data-theme="mono"] { --accent: #ffffff; }
+    html[data-theme="red"] { --accent: #ef4444; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -78,6 +79,7 @@
     .theme-btn[data-set="cyan"] { background: #22d3ee; }
     .theme-btn[data-set="gold"] { background: #f5c518; }
     .theme-btn[data-set="mono"] { background: #fff; }
+    .theme-btn[data-set="red"] { background: #ef4444; }
 
     /* HERO */
     .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 120px 0 64px; }
@@ -192,6 +194,7 @@
           <button class="theme-btn" data-set="cyan" aria-label="Cyan theme" aria-pressed="false"></button>
           <button class="theme-btn" data-set="gold" aria-label="Gold theme" aria-pressed="false"></button>
           <button class="theme-btn" data-set="mono" aria-label="Black and white theme" aria-pressed="false"></button>
+          <button class="theme-btn" data-set="red" aria-label="Red theme" aria-pressed="false"></button>
         </div>
       </div>
     </div>
