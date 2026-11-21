@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="cyan" class="is-loading">
+<html lang="en" class="is-loading">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,10 +14,6 @@
   <script>
     (function () {
       var d = document.documentElement;
-      try {
-        var t = localStorage.getItem('athul-split-theme');
-        if (t === 'cyan' || t === 'gold' || t === 'mono' || t === 'red') d.setAttribute('data-theme', t);
-      } catch (e) {}
       // Failsafe: never leave content hidden if scripts fail to load
       setTimeout(function () { d.classList.remove('is-loading'); }, 3000);
     })();
@@ -28,16 +24,12 @@
       --fg: #f2f2f2;
       --muted: #7a7a7a;
       --line: rgba(255, 255, 255, 0.12);
-      --accent: #22d3ee;
+      --accent: #991b1b;
       --gutter: clamp(16px, 4vw, 56px);
       --display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
       --mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
       --body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     }
-    html[data-theme="cyan"] { --accent: #22d3ee; }
-    html[data-theme="gold"] { --accent: #f5c518; }
-    html[data-theme="mono"] { --accent: #ffffff; }
-    html[data-theme="red"]  { --accent: #991b1b; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-text-size-adjust: 100%; }
@@ -65,19 +57,6 @@
     }
     .logo { font-family: var(--mono); font-size: 13px; letter-spacing: .2em; }
     .logo b { color: var(--accent); font-weight: 400; transition: color .4s ease; }
-    .themes { display: flex; gap: 10px; }
-    .dot {
-      width: 12px; height: 12px; border-radius: 50%; border: 0; cursor: pointer;
-      position: relative; transition: transform .25s ease;
-    }
-    .dot::after { content: ""; position: absolute; inset: -6px; } /* bigger tap target */
-    .dot:hover { transform: scale(1.25); }
-    .dot[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--fg); }
-    .dot:focus-visible { outline: 1px solid var(--fg); outline-offset: 4px; }
-    .dot[data-set="cyan"] { background: #22d3ee; }
-    .dot[data-set="gold"] { background: #f5c518; }
-    .dot[data-set="mono"] { background: #ffffff; }
-    .dot[data-set="red"]  { background: #991b1b; }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -207,12 +186,6 @@
 
   <nav>
     <a href="#top" class="logo" aria-label="Athul Split — home">A<b>·</b>S</a>
-    <div class="themes" role="group" aria-label="Color theme">
-      <button class="dot" data-set="cyan" aria-label="Cyan theme" aria-pressed="false"></button>
-      <button class="dot" data-set="gold" aria-label="Gold theme" aria-pressed="false"></button>
-      <button class="dot" data-set="mono" aria-label="White theme" aria-pressed="false"></button>
-      <button class="dot" data-set="red" aria-label="Red theme" aria-pressed="false"></button>
-    </div>
   </nav>
 
   <main>
@@ -279,16 +252,6 @@
   <script>
     (function () {
       var root = document.documentElement;
-
-      /* ---- Theme switcher ---- */
-      var dots = document.querySelectorAll('.dot');
-      function setTheme(t) {
-        root.setAttribute('data-theme', t);
-        dots.forEach(function (d) { d.setAttribute('aria-pressed', String(d.dataset.set === t)); });
-        try { localStorage.setItem('athul-split-theme', t); } catch (e) {}
-      }
-      dots.forEach(function (d) { d.addEventListener('click', function () { setTheme(d.dataset.set); }); });
-      setTheme(root.getAttribute('data-theme') || 'cyan');
 
       /* ---- Split hero words into characters ---- */
       document.querySelectorAll('[data-split]').forEach(function (el) {
