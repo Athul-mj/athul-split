@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" data-theme="cyan">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Athul Split — V-Taper Aesthetic</title>
+  <meta name="description" content="Athul Split — Athul MJ. 188cm, 81kg. V-taper aesthetic training from Kerala, India. Online coaching, custom training plans and nutrition guidance." />
+  <meta property="og:title" content="Athul Split" />
+  <meta property="og:description" content="V-Taper Aesthetic · Kerala, India" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    (function () {
+      try {
+        var t = localStorage.getItem('athul-split-theme');
+        if (t === 'cyan' || t === 'gold' || t === 'mono') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #f5f5f5;
+      --muted: #8a8a8a;
+      --line: rgba(255, 255, 255, 0.1);
+      --card: #0a0a0a;
+      --accent: #22d3ee;
+      --accent-ink: #000;
+      --gutter: clamp(20px, 5vw, 64px);
+      --max: 1280px;
+    }
+    html[data-theme="cyan"] { --accent: #22d3ee; }
+    html[data-theme="gold"] { --accent: #f5c518; }
+    html[data-theme="mono"] { --accent: #ffffff; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .accent { color: var(--accent); transition: color .4s ease; }
+
+    /* NAV */
+    nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 50;
+      transition: background .3s ease, border-color .3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled { background: rgba(0, 0, 0, .8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+    .logo { font-weight: 700; letter-spacing: .18em; font-size: 14px; white-space: nowrap; }
+    .logo span { color: var(--accent); transition: color .4s ease; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .socials { display: flex; gap: 14px; }
+    .socials a { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: var(--muted); transition: color .2s, background .2s; }
+    .socials a:hover { color: var(--accent); background: rgba(255,255,255,.05); }
+    .socials svg { width: 18px; height: 18px; }
+    .themes { display: flex; gap: 8px; padding-left: 20px; border-left: 1px solid var(--line); }
+    .theme-btn {
+      width: 20px; height: 20px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; outline-offset: 3px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .theme-btn:hover { transform: scale(1.15); }
+    .theme-btn[aria-pressed="true"] { box-shadow: 0 0 0 2px #000, 0 0 0 3px var(--fg); }
+    .theme-btn[data-set="cyan"] { background: #22d3ee; }
+    .theme-btn[data-set="gold"] { background: #f5c518; }
+    .theme-btn[data-set="mono"] { background: #fff; }
+
+    /* HERO */
+    .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 120px 0 64px; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(60% 50% at 50% 40%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
+      transition: background .4s ease;
+    }
+    .eyebrow { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .hero h1 {
+      font-size: clamp(64px, 17vw, 260px);
+      font-weight: 700; line-height: .85; letter-spacing: -.05em;
+      text-transform: uppercase;
+    }
+    .hero h1 .line2 { display: block; color: var(--accent); transition: color .4s ease; }
+    .tagline { margin-top: 32px; font-size: clamp(16px, 2vw, 22px); color: var(--muted); letter-spacing: .02em; }
+    .tagline b { color: var(--fg); font-weight: 500; }
+    .stats { margin-top: clamp(48px, 8vh, 96px); display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: clamp(32px, 7vw, 112px); }
+    .stat .num { font-size: clamp(32px, 5vw, 64px); font-weight: 600; letter-spacing: -.03em; line-height: 1; }
+    .stat .num small { font-size: .4em; font-weight: 400; color: var(--muted); margin-left: 4px; letter-spacing: 0; }
+    .stat .label { margin-top: 10px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); width: 1px; height: 48px; background: linear-gradient(var(--accent), transparent); animation: cue 2s ease-in-out infinite; }
+    @keyframes cue { 0%,100% { opacity: .2; transform: translateX(-50%) scaleY(.6); transform-origin: top; } 50% { opacity: 1; transform: translateX(-50%) scaleY(1); } }
+
+    /* SECTIONS */
+    section { padding: clamp(96px, 16vh, 180px) 0; border-top: 1px solid var(--line); }
+    .section-label { display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-bottom: 48px; }
+    .section-label::before { content: ""; width: 32px; height: 1px; background: var(--accent); transition: background .4s ease; }
+
+    .about-text { font-size: clamp(32px, 5.4vw, 76px); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; max-width: 18ch; }
+    .about-text .dim { color: var(--muted); }
+    .about-sub { margin-top: 48px; max-width: 520px; color: var(--muted); font-size: 18px; }
+
+    .services-head { font-size: clamp(40px, 6vw, 88px); font-weight: 600; letter-spacing: -.04em; line-height: 1; margin-bottom: 64px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .card { background: var(--bg); padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 40px); display: flex; flex-direction: column; min-height: 380px; transition: background .3s ease; position: relative; }
+    .card:hover { background: var(--card); }
+    .card::after { content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 0; background: var(--accent); transition: width .5s ease, background .4s ease; }
+    .card:hover::after { width: 100%; }
+    .card .idx { font-size: 13px; color: var(--accent); letter-spacing: .1em; transition: color .4s ease; }
+    .card h3 { margin-top: auto; font-size: clamp(26px, 2.4vw, 34px); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+    .card p { margin-top: 16px; color: var(--muted); font-size: 16px; }
+    .card .more { margin-top: 28px; font-size: 13px; letter-spacing: .15em; text-transform: uppercase; display: inline-flex; gap: 8px; align-items: center; }
+    .card .more span { transition: transform .3s ease; }
+    .card:hover .more span { transform: translateX(6px); color: var(--accent); }
+
+    .contact-head { font-size: clamp(48px, 10vw, 160px); font-weight: 700; letter-spacing: -.05em; line-height: .9; text-transform: uppercase; }
+    .contact-list { margin-top: 72px; border-top: 1px solid var(--line); }
+    .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 0; border-bottom: 1px solid var(--line); transition: padding .3s ease; }
+    .contact-row:hover { padding-left: 12px; padding-right: 12px; }
+    .contact-row .k { font-size: 12px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); min-width: 120px; }
+    .contact-row .v { font-size: clamp(20px, 3vw, 40px); font-weight: 500; letter-spacing: -.02em; flex: 1; overflow-wrap: anywhere; }
+    .contact-row .arrow { font-size: 24px; color: var(--muted); transition: transform .3s ease, color .3s ease; }
+    .contact-row:hover .v, .contact-row:hover .arrow { color: var(--accent); }
+    .contact-row:hover .arrow { transform: translate(4px, -4px); }
+
+    footer { border-top: 1px solid var(--line); padding: 32px 0; font-size: 13px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    /* FADE-IN */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-cue { animation: none; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 280px; }
+    }
+    @media (max-width: 640px) {
+      .nav-inner { height: 64px; }
+      .logo { font-size: 12px; letter-spacing: .14em; }
+      .nav-right { gap: 10px; }
+      .socials { gap: 2px; }
+      .socials a { width: 32px; height: 32px; }
+      .themes { padding-left: 10px; gap: 6px; }
+      .theme-btn { width: 18px; height: 18px; }
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .stat .label { font-size: 10px; letter-spacing: .12em; }
+      .contact-row { flex-wrap: wrap; padding: 22px 0; }
+      .contact-row .k { min-width: 100%; }
+      .contact-row .arrow { display: none; }
+    }
+    @media (max-width: 380px) {
+      .socials a:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo">ATHUL <span>SPLIT</span></a>
+      <div class="nav-right">
+        <div class="socials">
+          <a href="https://instagram.com/athul_split" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/results?search_query=Athul+Split" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+          </a>
+          <a href="#contact" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+        <div class="themes" role="group" aria-label="Color theme">
+          <button class="theme-btn" data-set="cyan" aria-label="Cyan theme" aria-pressed="false"></button>
+          <button class="theme-btn" data-set="gold" aria-label="Gold theme" aria-pressed="false"></button>
+          <button class="theme-btn" data-set="mono" aria-label="Black and white theme" aria-pressed="false"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow reveal">Athul MJ — Personal Brand</p>
+      <h1 class="reveal d1">Athul<span class="line2">Split</span></h1>
+      <p class="tagline reveal d2"><b>V-Taper Aesthetic</b> · Kerala, India</p>
+      <div class="stats">
+        <div class="stat reveal d2"><div class="num">188<small>cm</small></div><div class="label">Height</div></div>
+        <div class="stat reveal d3"><div class="num">81<small>kg</small></div><div class="label">Weight</div></div>
+        <div class="stat reveal d4"><div class="num">2024</div><div class="label">Training since</div></div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-label reveal">About</div>
+      <p class="about-text reveal d1">
+        <span class="dim">DevOps engineer by day.</span><br />
+        Building the <span class="accent">V-taper</span> by discipline.
+      </p>
+      <p class="about-sub reveal d2">188cm frame, training for aesthetics. Wide shoulders, tight waist, consistent work — no shortcuts.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-label reveal">Services</div>
+      <h2 class="services-head reveal d1">Train with<br /><span class="accent">intent.</span></h2>
+      <div class="cards">
+        <a class="card reveal d1" href="#contact">
+          <span class="idx">01</span>
+          <h3>Online Coaching</h3>
+          <p>1:1 coaching with weekly check-ins, form reviews and program adjustments built around your schedule.</p>
+          <span class="more">Enquire <span>→</span></span>
+        </a>
+        <a class="card reveal d2" href="#contact">
+          <span class="idx">02</span>
+          <h3>Custom Training Plan</h3>
+          <p>A structured split designed for the V-taper — shoulder width, back depth and a tight midsection.</p>
+          <span class="more">Enquire <span>→</span></span>
+        </a>
+        <a class="card reveal d3" href="#contact">
+          <span class="idx">03</span>
+          <h3>Nutrition Guidance</h3>
+          <p>Practical macros and meal structure that fit Indian food and a real working life.</p>
+          <span class="more">Enquire <span>→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="contact-head reveal d1">Let's<br /><span class="accent">work.</span></h2>
+      <div class="contact-list">
+        <a class="contact-row reveal" href="https://instagram.com/athul_split" target="_blank" rel="noopener">
+          <span class="k">Instagram</span><span class="v">@athul_split</span><span class="arrow">↗</span>
+        </a>
+        <a class="contact-row reveal d1" href="https://www.youtube.com/results?search_query=Athul+Split" target="_blank" rel="noopener">
+          <span class="k">YouTube</span><span class="v">Athul Split</span><span class="arrow">↗</span>
+        </a>
+        <!-- TODO: replace with Athul's real contact email -->
+        <a class="contact-row reveal d2" href="mailto:hello@athulsplit.com">
+          <span class="k">Email</span><span class="v">hello@athulsplit.com</span><span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Athul Split</span>
+      <span>Kerala, India</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btns = document.querySelectorAll('.theme-btn');
+      function apply(t) {
+        root.setAttribute('data-theme', t);
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === t)); });
+        try { localStorage.setItem('athul-split-theme', t); } catch (e) {}
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.set); }); });
+      apply(root.getAttribute('data-theme') || 'cyan');
+
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 20); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
