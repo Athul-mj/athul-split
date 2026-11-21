@@ -56,6 +56,11 @@
       padding: 0 var(--gutter);
     }
     .logo { font-family: var(--mono); font-size: 13px; letter-spacing: .2em; }
+    .socials { display: flex; align-items: center; gap: 16px; }
+    .socials a { display: block; color: #fff; transition: color .3s ease; }
+    .socials a:hover, .socials a:focus-visible { color: #991b1b; }
+    .socials svg { width: 20px; height: 20px; display: block; }
+    .socials-contact { justify-content: center; margin-top: 40px; }
     .logo b { color: var(--accent); font-weight: 400; transition: color .4s ease; }
 
     /* ---------- HERO ---------- */
@@ -186,6 +191,10 @@
 
   <nav>
     <a href="#top" class="logo" aria-label="Athul Split — home">A<b>·</b>S</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/athul_split" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@athulsplit" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor"/></svg></a>
+    </div>
   </nav>
 
   <main>
@@ -237,9 +246,12 @@
       <span class="label mono muted reveal"><span class="accent">03</span>— Connect</span>
       <a class="email reveal" href="https://mail.google.com/mail/?view=cm&amp;to=athulsplit@gmail.com" target="_blank" rel="noopener">athulsplit@gmail.com</a>
       <div class="platforms mono reveal">
-        <a href="https://instagram.com/athul_split" target="_blank" rel="noopener"><span class="muted">Instagram</span>@athul_split</a>
-        <!-- TODO: point to the real channel URL once known (youtube.com/@athul_split does not exist yet) -->
-        <a href="https://www.youtube.com/results?search_query=Athul+Split" target="_blank" rel="noopener"><span class="muted">YouTube</span>@athul_split</a>
+        <a href="https://www.instagram.com/athul_split" target="_blank" rel="noopener"><span class="muted">Instagram</span>@athul_split</a>
+        <a href="https://www.youtube.com/@athulsplit" target="_blank" rel="noopener"><span class="muted">YouTube</span>@athulsplit</a>
+      </div>
+      <div class="socials socials-contact reveal">
+        <a href="https://www.instagram.com/athul_split" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.youtube.com/@athulsplit" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor"/></svg></a>
       </div>
     </section>
   </main>
